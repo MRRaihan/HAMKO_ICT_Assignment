@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\ChatGPTController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
@@ -22,3 +23,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // User Login & Registration route
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/register', [AuthController::class, 'register']);
+
+// Your ChatGPT API integration routes go here
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('/chatgpt', [ChatGPTController::class, 'interactWithChatGPT']);
+});
