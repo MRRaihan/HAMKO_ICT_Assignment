@@ -24,7 +24,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/register', [AuthController::class, 'register']);
 
-// Your ChatGPT API integration routes go here
+// ChatGPT API integration route
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/chatgpt', [ChatGPTController::class, 'interactWithChatGPT']);
 });

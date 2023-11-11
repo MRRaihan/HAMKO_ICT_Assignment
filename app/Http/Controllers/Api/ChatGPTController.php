@@ -14,7 +14,6 @@ class ChatGPTController extends Controller
 
         $apiKey = config('services.chatgpt.api_key');
 
-
         $response = Http::post('https://api.openai.com/v1/chat/completions', [
             'messages' => [
                 ['role' => 'system', 'content' => 'You are a helpful assistant.'],
